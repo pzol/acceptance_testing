@@ -1,10 +1,34 @@
-%table#transactionsTable
-  %thead
-    %tr
-      %td timestamp
-    %tr 
-      %td
-        %input{name: 'timestampSearch'}
-  %tbody
-    %tr 
-      %td 2012-01-27 20:09:10
+
+%div.content
+  %h1 Latest Transactions
+  %table#transactionsTable
+    %thead
+      %tr
+        %th timestamp
+        %th contract
+        %th facility
+        %th method
+        %th time_taken
+        %th product
+      %tr 
+        %td
+          %input{ name: 'timestampSearch' }
+        %td
+          %input{ name: 'contractSearch' }
+        %td
+          %input{ name: 'facilitySearch' }
+        %td
+          %input{ name: 'methodSearch' }
+        %td 
+          %input{ name: 'time_takenSearch' }
+        %td
+          %input{ name: 'productSearch' }
+    %tbody
+      - (1..20).each do 
+        %tr 
+          %td 2012-01-27 20:09:10
+          %td test
+          %td api.test
+          %td hotels
+          %td 19999
+          %td HOTEL

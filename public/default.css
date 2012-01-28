@@ -3,8 +3,55 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6,
 p, a, em, img, small, strong, sub, sup, b, u, i, dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, pre 
 {margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}
-body {line-height:1;}
-ol, ul {list-style:none;}
-:focus {outline:0;}
-table {border-collapse:collapse;border-spacing:0;}
-input[type="checkbox"] {width:auto !important;}
+
+body {
+  line-height: 1.25;
+  font-family:  Helvetica, sans-serif;
+  background-color: #BBB;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.content {
+  width: 1024px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #CCC;
+  background: white;
+  margin: 30px auto -1px auto; 
+  padding: 15px;
+
+  -moz-box-shadow: 5px 5px 5px #888;
+  -webkit-box-shadow: 5px 5px 5px #888;
+  box-shadow: 5px 5px 5px #888;
+}
+
+h1 {
+  font-size: 22px;
+  padding: 3px;
+  line-height: 1.8em;
+}
+
+table th {
+  vertical-align: middle;
+  background: #111;
+  color: #EDEDED;
+}
+
+table td, table th {
+  padding: 3px 4px;
+  text-align: center;
+  border: 1px solid #CCC;
+  border-image: initial;
+}
+
+#transactionsTable {
+  width: 100%;
+}
