@@ -24,11 +24,11 @@
         %td
           %input{ name: 'productSearch' }
     %tbody
-      - (1..20).each do 
+      - @transactions.each do |row| 
         %tr 
-          %td 2012-01-27 20:09:10
-          %td test
-          %td api.test
-          %td hotels
-          %td 19999
-          %td HOTEL
+          %td= row[:timestamp].to_s
+          %td= row[:contract]
+          %td= row[:facility]
+          %td= row[:method]
+          %td= row[:time_taken]
+          %td= row[:product]

@@ -75,6 +75,7 @@ DEPENDENCIES
   guard-haml
   guard-rspec
   haml
+  json
   rake
   rspec
   sinatra

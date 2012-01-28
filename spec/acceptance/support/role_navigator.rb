@@ -13,6 +13,10 @@ module Role
       visit page unless page.driver.current_url[page] 
     end
 
+    def is_on_page!(url)
+      page.driver.current_url.should match /#{url}/i
+    end
+
     def cookie_filename
       File.expand_path('../../../tmp/cookies', __FILE__)
     end
