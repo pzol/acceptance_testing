@@ -11,18 +11,21 @@
         %th time_taken
         %th product
       %tr 
-        %td
-          %input{ name: 'timestampSearch' }
-        %td
-          %input{ name: 'contractSearch' }
-        %td
-          %input{ name: 'facilitySearch' }
-        %td
-          %input{ name: 'methodSearch' }
-        %td 
-          %input{ name: 'time_takenSearch' }
-        %td
-          %input{ name: 'productSearch' }
+        %form
+          %td
+            %input(name='timestamp')
+          %td
+            %input(name='contract')
+          %td
+            %input(name='facility')
+          %td
+            %input(name='method')
+          %td 
+            %input(name='time_taken')
+          %td
+            %input(name='product')
+          %td
+            %input#searchButton(type='image' src='search.png' height='16' width='16')
     %tbody
       - @transactions.each do |row| 
         %tr 
