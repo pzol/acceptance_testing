@@ -1,13 +1,14 @@
 require 'spec_helper'
 require 'transaction_filter'
+require 'transaction'
 require 'json_data_adapter'
-require 'json_data_reader'
+require 'transaction_reader'
 
-describe JsonDataReader do
+describe TransactionReader do
   let(:path) { File.expand_path('../data.json', __FILE__)  }
 
   it 'should read all lines' do
-    adapter = JsonDataReader.new(path)
+    adapter = TransactionReader.new(path)
 
     db = []
     adapter.read {|row| db << row }
@@ -26,18 +27,18 @@ describe JsonDataReader do
   end
 
   it 'should find by time_taken' do
-    rows = JsonDataReader.new(path).find(time_taken: 20_000)
+    rows = TransactionReader.new(path).find(time_taken: 20_000)
     rows.count.should == 5
     rows.all? { |row| row.time_taken.should > 20_000}
   end
 
   it 'should return by default only 20 items' do
-    rows = JsonDataReader.new(path).find
+    rows = TransactionReader.new(path).find
     rows.count.should == 20
   end
 
   it 'should return only as many rows as specified in limit' do
-    rows = JsonDataReader.new(path).find({}, {limit: 10})
+    rows = TransactionReader.new(path).find({}, {limit: 10})
     rows.count.should == 10
   end
 end

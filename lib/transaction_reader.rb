@@ -1,4 +1,4 @@
-class JsonDataReader
+class TransactionReader
   def initialize(filename)
     @filename = filename
   end
