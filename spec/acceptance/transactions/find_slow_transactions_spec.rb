@@ -8,7 +8,8 @@ story 'Developers can find slow transactions' do
     user = TestUser.new.extend(Role::TransactionsBrowser) 
     user.extend(Role::TimeTakenSearcher)
     user.visit_latest_transactions
-
+    user.sees_transactions_table!
+    
     # _ 'When I search for time_taken
     user.searches_for_time_taken(time_taken = 6000)
 

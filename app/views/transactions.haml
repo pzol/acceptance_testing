@@ -27,9 +27,9 @@
     %tbody
       - @transactions.each do |row| 
         %tr 
-          %td= row[:timestamp].to_s
-          %td= row[:contract]
-          %td= row[:facility]
-          %td= row[:method]
-          %td= row[:time_taken]
-          %td= row[:product]
+          %td= row.timestamp.to_s
+          %td= row.contract
+          %td= row.facility
+          %td= row.method
+          %td= row.time_taken
+          %td= row.product

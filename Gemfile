@@ -3,6 +3,7 @@ source :rubygems
 gem 'sinatra'
 gem 'haml'
 gem 'json'
+gem 'activemodel', :require => 'active_model'
 
 group :development do
   gem 'guard'

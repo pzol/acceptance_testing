@@ -4,7 +4,7 @@ class TransactionFilter
   end
 
   def allowed?(row)
-    time_taken?(row[:time_taken])
+    time_taken?(row.time_taken)
   end
 
   def time_taken?(time_taken)

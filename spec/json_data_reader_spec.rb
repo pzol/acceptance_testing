@@ -15,24 +15,20 @@ describe JsonDataReader do
     # should read all
     db.should have(100).records
 
-    # should only contain the selected keys
-    allowed_keys = [:timestamp, :facility, :product, :method, :contract, :time_taken]
-    db.all? { |e| e.keys.should include(*allowed_keys) }
-
     # all date should be in the right range
-    min_date = db.min { |a, b| a[:timestamp] <=> b[:timestamp] }[:timestamp]
-    max_date = db.max { |a, b| a[:timestamp] <=> b[:timestamp] }[:timestamp]
+    min_date = db.min { |a, b| a.timestamp <=> b.timestamp }.timestamp
+    max_date = db.max { |a, b| a.timestamp <=> b.timestamp }.timestamp
     min_date.to_s.should == '2012-01-20 13:53:29 +0100'
     max_date.to_s.should == '2012-01-20 14:50:51 +0100'
 
     # time_taken should be all Fixnum
-    db.all? { |e| e[:time_taken].should be_a(Fixnum)  }
+    db.all? { |e| e.time_taken.should be_a(Fixnum)  }
   end
 
   it 'should find by time_taken' do
     rows = JsonDataReader.new(path).find(time_taken: 20_000)
     rows.count.should == 5
-    rows.all? { |row| row[:time_taken].should > 20_000}
+    rows.all? { |row| row.time_taken.should > 20_000}
   end
 
   it 'should return by default only 20 items' do
