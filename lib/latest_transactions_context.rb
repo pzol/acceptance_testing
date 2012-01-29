@@ -1,7 +1,7 @@
 class LatestTransactionsContext
 
   def call(data_path, params, max_items=20)
-    @adapter = JsonDataAdapter.new(data_path)
+    @adapter = JsonDataReader.new(data_path)
     @filter = TransactionFilter.new(params)
     @data = []
     i = 0 
