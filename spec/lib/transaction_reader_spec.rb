@@ -1,11 +1,11 @@
 require 'spec_helper'
 require 'transaction_filter'
-require 'transaction'
+require 'models/transaction'
 require 'json_data_adapter'
 require 'transaction_reader'
 
 describe TransactionReader do
-  let(:path) { File.expand_path('../data.json', __FILE__)  }
+  let(:path) { File.expand_path('../../data.json', __FILE__)  }
 
   it 'should read all lines' do
     adapter = TransactionReader.new(path)

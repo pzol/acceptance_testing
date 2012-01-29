@@ -1,7 +1,9 @@
 require 'spec_helper'
 require 'json_data_adapter'
+require 'models/transaction'
 require 'transaction_filter'
-require 'find_transactions_context'
+require 'transaction_reader'
+require 'contexts/find_transactions_context'
 
 describe FindTransactionsContext do
   it 'should provide a list of transactions' do

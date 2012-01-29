@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'transaction'
+require 'models/transaction'
 
 describe Transaction do
   it 'should validate time_taken as an integer' do

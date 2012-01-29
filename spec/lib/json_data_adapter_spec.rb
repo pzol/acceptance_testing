@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'transaction'
+require 'models/transaction'
 require 'json_data_adapter'
 
 describe JsonDataAdapter do

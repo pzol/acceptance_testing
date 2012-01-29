@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'transaction'
+require 'models/transaction'
 require 'transaction_filter'
 
 describe TransactionFilter do
