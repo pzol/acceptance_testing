@@ -13,7 +13,6 @@
       %tr 
         %form
           %td
-            %input(name='timestamp')
           %td
             %input(name='contract')
           %td
@@ -21,10 +20,9 @@
           %td
             %input(name='method')
           %td 
-            %input(name='time_taken')
+            %input{name:'time_taken', value: params[:time_taken] }
           %td
             %input(name='product')
-          %td
             %input#searchButton(type='image' src='search.png' height='16' width='16')
     %tbody
       - @transactions.each do |row| 
