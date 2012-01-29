@@ -17,6 +17,7 @@ story 'Developers can find slow transactions' do
     user.sees_transactions_table!
 
     user.all_table_rows { |tr| tr.time_taken.should > time_taken }
+    user.page.should have_field 'time_taken', :with => time_taken.to_s
   end
 
   scenario 'sees all messages when entering an invalid value for time_taken' do
@@ -28,7 +29,7 @@ story 'Developers can find slow transactions' do
     # _ 'When I search for time_taken with an invalid value 'xyz'
     user.searches_by_time_taken(time_taken = 'xyz')
     user.sees_transactions_table!
-    user.table_rows.should have(20).rows
+    user.table_rows.should have(20).rows, "Expected #{user.page.text} to have 20 rows"
   end
   
 end
