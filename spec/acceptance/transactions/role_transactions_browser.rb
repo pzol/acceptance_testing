@@ -31,6 +31,7 @@ module Role
       end
 
       headers.each { |h| thead.should have_content h }
+      page.should have_selector '#searchButton'
     end
 
     def all_table_rows
