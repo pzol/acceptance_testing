@@ -10,4 +10,4 @@ Capybara.app = Sinatra::Application
 require 'acceptance/dsl.rb'
 
 ### include all support files
-Dir["#{File.dirname(__FILE__)}/acceptance/support/**/*.rb"].each {|f| require f}
+Dir["#{File.dirname(__FILE__)}/acceptance/support/**/*.rb"].sort.each {|f| require f}
